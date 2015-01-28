@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-	jshint = require('gulp-jshint'),
+    jshint = require('gulp-jshint'),
     jshintReporter = require('jshint-stylish'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
@@ -16,7 +16,8 @@ var LessPluginAutoPrefix = require('less-plugin-autoprefix'),
 
 
 gulp.task('default', function() {
-	//
+	gulp.watch('./devAssets/js/resto.js', ['build-js']);
+	gulp.watch('./devAssets/less/*/*.less', ['build-less']);
 });
 
 // LESS
@@ -28,7 +29,7 @@ gulp.task('build-less',function () {
 });
 
 // JS
-gulp.task('concatena-js',function () {
+gulp.task('build-js',function () {
   gulp.src(['./bower_components/jquery/dist/jquery.min.js'
   			,'./bower_components/components-bootstrap/js/bootstrap.min.js'
   			,'./devAssets/js/resto.js'])
