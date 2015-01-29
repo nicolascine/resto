@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     less = require('gulp-less'),
     watch = require('gulp-watch'),
-    gutil = require('gulp-util');
+    gutil = require('gulp-util'),
+    uncss = require('gulp-uncss-task');
 
 // clean + autoprefix
 var LessPluginCleanCSS = require("less-plugin-clean-css"),
@@ -21,15 +22,15 @@ gulp.task('default', function() {
 });
 
 // LESS
-gulp.task('build-less',function () {
+gulp.task('build-less', function () {
   gulp.src('./devAssets/less/site.less')
 	.pipe(less({ plugins: [autoprefix, cleancss] }))
-    .pipe(gulp.dest('./app/assets/css/'))
-    .on('error', gutil.log);
+  .pipe(gulp.dest('./app/assets/css/'))
+  .on('error', gutil.log);
 });
 
 // JS
-gulp.task('build-js',function () {
+gulp.task('build-js', function () {
   gulp.src(['./bower_components/jquery/dist/jquery.min.js'
   			,'./bower_components/components-bootstrap/js/bootstrap.min.js'
   			,'./devAssets/js/resto.js'])
@@ -39,5 +40,17 @@ gulp.task('build-js',function () {
   .pipe(gulp.dest('./app/assets/js/'))
   .on('error', gutil.log);
 
+});
+
+//REMOVE unused CSS
+
+gulp.task('unused', function() {
+  gulp.src('./app/site.css')
+  .pipe(uncss({
+    html: ['./app/index.html']
+  }))
+  .pipe(gulp.dest('./app'))
+  
+  .on('error', gutil.log);
 });
 
