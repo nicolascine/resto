@@ -1,0 +1,36 @@
+.premenu{
+	background: #f8f8f8;
+	width:100%;
+	height: 33px;
+	top:0;
+	position:fixed;
+}
+
+
+.nav{
+	text-transform: uppercase;
+	& > li{
+		& > a{
+			padding-left:10px;
+			padding-right: 10px;
+		}
+	}
+}
+
+.navbar-default{
+	background-color: white;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-text{
+	color:black;
+	&:hover{
+		color:@rosado;
+	}
+}
+
+@media (min-width: 1200px) {
+	.navbar-fixed-top{
+		top:33px;
+		border: 1px solid @grisClaro;
+	}
+}
