@@ -33,7 +33,7 @@
 $(document).ready(function($) {
   
  WebFontConfig = {
-    google: { families: [ 'Karla:400,700:latin' ] }
+    google: { families: [ 'Karla:400,700:latin', 'Open+Sans+Condensed:300:latin' ] }
   };
 
   (function() {
