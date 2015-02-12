@@ -18,13 +18,21 @@ var LessPluginCleanCSS = require("less-plugin-clean-css"),
 var LessPluginAutoPrefix = require('less-plugin-autoprefix'),
     autoprefix = new LessPluginAutoPrefix({browsers: ["last 2 versions"]});
 
-
+//watch all~
 gulp.task('default', function() {
 
   var watchJs    = ['devAssets/js/resto.js'],
       watchLess  = ['devAssets/less/*/*.less'];
 
-	gulp.watch(watchJs, ['build-js']);
+  gulp.watch(watchJs, ['build-js']);
+  gulp.watch(watchLess, ['build-less']);
+
+});
+
+//watch all~
+gulp.task('watch-less', function() {
+
+  watchLess  = ['devAssets/less/*/*.less'];
 	gulp.watch(watchLess, ['build-less']);
 
 });
@@ -37,21 +45,31 @@ gulp.task('build-less', function () {
       destFolder  =  'app/assets/css/';
 
   return gulp.src(lessFile)
-         .pipe(plumber())
-         .pipe(expect(lessFile))
+         /*.pipe(plumber())*/
+         /*.pipe(expect(lessFile))*/
          .pipe(less({ plugins: [autoprefix, cleancss] }))
-         .pipe(uncss({
+       /*  .pipe(uncss({
             html: [htmlFiles],
             ignore: [
                 ".fade",
                 ".fade.in",
+                ".navbar-collapse",
+                ".navbar-nav",
+                ".navbar-header",
+                ".navbar-left",
+                ".navbar-right",
+                ".navbar-nav.navbar-left:first-child",
+                ".navbar-nav.navbar-right:last-child",
+                ".navbar-text:last-child",
+                ".navbar-collapse.in",
+                ".in",
                 ".collapse",
                 ".collapse.in",
                 ".collapsing",
                 ".alert-danger",
                 /\.open/
             ]
-          }))
+          }))*/
          .pipe(csso())
          .pipe(gulp.dest(destFolder))
          .on('error', gutil.log);
@@ -73,15 +91,3 @@ gulp.task('build-js', function () {
          .pipe(gulp.dest('./app/assets/js/'))
          .on('error', gutil.log);
 });
-
-//REMOVE unused CSS
-/*
-gulp.task('unused', function() {
-  gulp.src('./app/site.css')
-  .pipe(uncss({
-    html: ['./app/index.html']
-  }))
-  .pipe(gulp.dest('./app'))
-  
-  .on('error', gutil.log);
-});*/
