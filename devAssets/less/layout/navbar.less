@@ -31,18 +31,36 @@
 .navbar-nav > li > a{
 	padding:18px 15px;
 }
+@media (max-width: @screen-xs-max) {
+	.navbar-nav > li > a{
+		padding:10px 15px;
+	}
+}
+
 .navbar-brand{
 	height: auto !important;
+	padding:15px 0px 10px 15px;
 }
 
 .logo {
 	max-width: 170px;
 	height: auto;
 }
+@media (min-width: @screen-sm-min) { 
+	
+	.logo{
+		max-width: 140px;
+	}
 
+}
 @media (min-width: 1200px) {
 	.navbar-fixed-top{
 		top:33px;
 		border: 1px solid @grisClaro;
 	}
+	.logo{
+		max-width: 170px;
+	}
 }
+
+/*fixing bug scrollable menu?*/
