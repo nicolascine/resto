@@ -30,6 +30,8 @@
  *  ----
  */
 
+ 
+
 $(document).ready(function($) {
   
  WebFontConfig = {
@@ -46,5 +48,13 @@ $(document).ready(function($) {
     s.parentNode.insertBefore(wf, s);
   })();
 
+
 });
+
+
+
+
+
+
+
 
