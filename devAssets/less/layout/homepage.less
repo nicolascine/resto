@@ -128,9 +128,71 @@
 		}	
 	}
 
+	@media (max-width: @screen-xs-max) {
+			.container{
+				.col-xs-12{
+					padding-bottom:10px;
+
+					img{
+						max-width: 30%;
+						float:left;
+					}
+
+					h5{
+						display: block;
+						max-width: 100%;
+						float:left;
+						padding-left:10px;
+						font-size:16px;
+					}
+
+					a:nth-child(2){
+					    display: inline-block;
+					    float: left;
+					    left: 0;
+					    margin-left: 20px;
+					    position: relative !important;
+					    top: 0;
+					}
+					a:last-child {
+					    display: inline-block;
+					    float: left;
+					    margin-top: 23px;
+					    padding-right: 3px;
+					    position: static !important;
+					    max-width: 69%;
+					}
+
+					span{
+						display:block;
+						position:absolute;
+						top:4px;
+						left:10px;
+						background: @dorado;
+
+						h6{
+							color:white;
+							font-weight: 700;
+							text-transform: uppercase;
+							font-size:13px;
+							height: 14px !important;
+							display: block;
+							margin:5px 0px;
+						}	
+					}
+
+					
+				}
+
+				
+			}
+	}
+
 }
 
-// R I B O R N 
+// --------------------
+//	RIBORN RECETAS
+// --------------------
 
 	
 .ribbon {
@@ -168,72 +230,8 @@
 
 
 
-@media (max-width: @screen-xs-max) {
-	.row.recetas{
-		.container{
-			.col-xs-12{
-				padding-bottom:10px;
-
-				img{
-					max-width: 30%;
-					float:left;
-				}
-
-				h5{
-					display: block;
-					max-width: 100%;
-					float:left;
-					padding-left:10px;
-					font-size:16px;
-				}
-
-				a:nth-child(2){
-				    display: inline-block;
-				    float: left;
-				    left: 0;
-				    margin-left: 20px;
-				    position: relative !important;
-				    top: 0;
-				}
-				a:last-child {
-				    display: inline-block;
-				    float: left;
-				    margin-top: 23px;
-				    padding-right: 3px;
-				    position: static !important;
-				    max-width: 69%;
-				}
-
-				span{
-					display:block;
-					position:absolute;
-					top:4px;
-					left:10px;
-					background: @dorado;
-
-					h6{
-						color:white;
-						font-weight: 700;
-						text-transform: uppercase;
-						font-size:13px;
-						height: 14px !important;
-						display: block;
-						margin:5px 0px;
-					}	
-				}
-
-				
-			}
-
-			
-		}
-
-	}
-
-}
-
 // --------------------
-//	CHEFS
+//	CHEFS --
 // --------------------
 
 .row.chefs{
@@ -283,6 +281,11 @@
 				
 			}
 
+			@media (max-width: @screen-xs-max) {
+					+ div{
+						padding-top:30px;
+					}
+				}
 		}
 		padding:0px;
 		img{
@@ -350,3 +353,65 @@
 	}
 
 }
+
+// --------------------
+//	SECRETOS DE COCINA (ingredientes)
+// --------------------
+// 
+.row.secretos{
+	.row.recetas;
+	.container{
+		a{
+			position: inherit;
+			top: inherit;
+			left: inherit;
+		}
+		.loopsecretos{
+			div{
+				display: block;
+				overflow: hidden;
+				margin-bottom: 10px;
+			}
+			
+			img{
+				max-width: 40% !important;
+				display: inline-block;
+				float: left;
+				margin-right: 10px;
+			}
+			h3{
+				display: inline-block;
+				float: left;
+				padding: 0px;
+				margin: 0px;
+				width: 55.9%;
+
+			}
+			@media (max-width: @screen-xs-max) {
+				h3{
+					font-size: 1em;
+				}
+			}
+			p{
+				font-size:0.9em;
+			}
+			@media (max-width: @screen-xs-max) {
+				p{
+					font-size:0.8em;
+				}
+			}
+		}
+		@media (max-width: @screen-xs-max) {
+			.col-md-7{
+				margin-bottom:30px;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
