@@ -228,8 +228,6 @@
 		border-right-color:transparent;
 	}
 
-
-
 // --------------------
 //	CHEFS --
 // --------------------
@@ -409,7 +407,53 @@
 	}
 }
 
+.row.destacados{
+	max-width: 100%;
+	margin:0px;
+	padding: 15px 0 0;
+	.container{
+		background-color: white;
+		z-index: 9999;
+		margin-top:-110px;
+		padding:0px;
+		.boxdestacado{
+			height: 150px;
+			line-height: 150px;
+			widows: 100%;
+			border: 1px solid @grisClaro;
+			text-align: center;
+			margin-top:15px;
+			img{
+				vertical-align: middle;
+				height: auto;
+				padding: 10px;
+				margin:0 auto;
+				margin-top:-35px;
 
+				&.chef{width:90px;max-width:90px}
+				&.book{width:73px;max-width:73px}
+				&.video{width:80px;max-width:80px}
+				&.espiga{width:80px;max-width:80px}
+				
+				&:hover{
+					 filter: grayscale(100%);
+				}
+			}
+			h3{
+				display: block;
+				font-size: 1.1em;
+				font-weight: bold;
+				margin: -40px 0px 0px 0px;
+				padding: 0px;
+				text-align: center;
+			}
+			a{
+				color: @negro;
+				text-decoration: none;
+			}
+		}
+	}
+}
 
 
 
