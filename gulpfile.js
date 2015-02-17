@@ -48,7 +48,7 @@ gulp.task('build-less', function () {
          .pipe(plumber())
          .pipe(expect(lessFile))
          .pipe(less({ plugins: [autoprefix, cleancss] }))
-         .pipe(uncss({
+         /*.pipe(uncss({
             html: [htmlFiles],
             ignore: [
                 ".fade",
@@ -69,7 +69,7 @@ gulp.task('build-less', function () {
                 ".alert-danger",
                 /\.open/
             ]
-          }))
+          }))*/
          .pipe(csso())
          .pipe(gulp.dest(destFolder))
          .on('error', gutil.log);

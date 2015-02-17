@@ -100,6 +100,7 @@
 
 		h5{
 			font-weight: 700;
+			font-size:16px;
 		}
 	}
 	
@@ -186,6 +187,15 @@
 
 				
 			}
+
+	}
+
+	.estrellas{
+		color:@dorado;
+		text-align: right;
+		.gris{
+			color:@grisClaro;
+		}
 	}
 
 }
@@ -273,7 +283,7 @@
 						padding:0px !important;
 						text-decoration:underline !important;
 						color: @dorado;
-						font-size:0.8em;
+						font-size:1em;
 					}	
 				}
 				
@@ -317,6 +327,7 @@
 			margin-left: 18px;
 			padding-left: 10px;
 			overflow: hidden;
+
 		}
 		span{
 			cursor:pointer;
@@ -343,6 +354,7 @@
 				}
 				h5{
 					font-weight:bold;
+					font-size:16px;
 				}
 			}
 
@@ -406,7 +418,10 @@
 		}
 	}
 }
-
+// --------------------
+//	DESTACADOS {BOX - PRINCIPALES}
+// --------------------
+// 
 .row.destacados{
 	max-width: 100%;
 	margin:0px;
@@ -416,10 +431,11 @@
 		z-index: 9999;
 		margin-top:-110px;
 		padding:0px;
+		margin-bottom:20px;
 		.boxdestacado{
 			height: 150px;
 			line-height: 150px;
-			widows: 100%;
+			width: 100%;
 			border: 1px solid @grisClaro;
 			text-align: center;
 			margin-top:15px;
@@ -453,9 +469,73 @@
 			}
 		}
 	}
+	@media (max-width: @screen-xs-max) {
+		.container{
+			z-index: 0;
+			margin-top: 0px;
+		}
+	}
+}
+
+// --------------------
+//	MOCKUP CURSO
+// --------------------
+//
+
+.row.curso{
+	max-width: 100%;
+	margin:0px;
+	padding: 15px 0 0;
+	.container{
+		.mockup{
+			border:thin solid lighten(@grisOscuro, 10%);
+			background: lighten(@grisClaro, 12%);
+			text-align: center;
+			padding: 20px;
+			
+			.tituloHome h3{
+				background: lighten(@grisClaro, 12%);
+			}
+			> a, img, ul{
+				display: inline-block !important;
+			}
+			.devices{
+				max-width: 80%;
+			}
+			ul{
+				text-align: left;
+				line-height: 2em;
+				li{
+					list-style:none;
+					i{
+						font-size: 0.7em;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+
 }
 
 
+
+// --------------------
+//	COMIDA SALUDABLE + REDES SOCIALES
+// --------------------
+//
+
+.row.saludable{
+	max-width: 100%;
+	margin:0px;
+	padding: 15px 0 0;
+	.container{
+		margin-top:60px;
+		@media (max-width: @screen-xs-max) {
+		margin-top:0px;
+		}
+	}
+}
 
 
 
